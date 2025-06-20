@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Image extends Model
 {
+    protected $fillable = [
+        'image_url',
+        'description'
+    ];
+
     public function report(): BelongsTo
     {
         return $this->belongsTo(Image::class, 'report_id');
