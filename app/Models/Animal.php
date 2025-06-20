@@ -17,4 +17,14 @@ class Animal extends Model
     {
         return $this->hasMany(Report::class);
     }
+
+    public function breed(): BelongsTo
+    {
+        return $this->belongsTo(Breed::class, 'breed_id');
+    }
+
+    public function species(): BelongsTo
+    {
+        return $this->belongsTo(Species::class, 'species_id');
+    }
 }
